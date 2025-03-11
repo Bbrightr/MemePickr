@@ -61,6 +61,12 @@ header{
     border-radius: 5px;
 }
 
+.radio-space{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+}
+
 .radio{
     display: flex;
     align-items: center;
