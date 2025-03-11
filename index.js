@@ -182,4 +182,4 @@ function getEmotionsArray(cats){
         return emotionsArray
     }
     
-
+console.log(getEmotionsArray(catsData))
