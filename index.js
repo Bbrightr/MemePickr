@@ -5,6 +5,10 @@ const emotionRadios = document.getElementById('emotion-radios')
 emotionRadios.addEventListener("change", activateSelection)
 
 function activateSelection(e){
+    const highLighted = document.getElementsByClassName('radio')
+    for (let removeHighlighted of highLighted){
+        removeHighlighted.classList.remove('highlight')
+    }
     document.getElementById(e.target.id).parentElement.classList.add('highlight')
 }
 
