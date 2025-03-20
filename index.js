@@ -5,10 +5,16 @@ const getImageBtn = document.getElementById('get-image-btn')
 const gifsOnlyOption = document.getElementById('gifs-only-option')
 const memeModalInner = document.getElementById('meme-modal-inner')
 const memeModal = document.getElementById('meme-modal')
+const closeModal = document.getElementById('meme-modal-close-btn')
 
 emotionRadios.addEventListener('change', highlightCheckedOption)
 
 getImageBtn.addEventListener('click', renderCat)
+closeModal.addEventListener('click', closeTheModal)
+
+function closeTheModal(){
+    memeModal.style.display = 'none'
+}
 
 function highlightCheckedOption(e){
     const radios = document.getElementsByClassName('radio')
@@ -50,23 +56,18 @@ function getSingleCatObject(){
     
 }
 
-function renderCat(){
-/*
-Challenge:
-1. Take the object that is returned by 
-   getSingleCatObject and save it to a const 
-   called "catObject".
-2. Set memeModalInner’s innerHTML to the HTML 
-   string below, remembering to insert the relevant 
-   data from catObject to replace the UPPERCASE text.
-3. Set memeModal’s display property to "flex". 
- 
-       `<img 
-        class="cat-img" 
-        src="./images/CAT IMAGE"
-        alt="CAT ALT TEXT"
-        >`
-*/ 
+function renderCat(){s
+    const catObject = getSingleCatObject()
+    memeModalInner.innerHTML = `
+                    <img 
+                        class="cat-img" 
+                        src="./images/${catObject.image}"
+                        alt="${catObject.alt}"
+                    >
+    `
+    
+    memeModal.style.display = "flex"
+    
 }
  
 function getEmotionsArray(cats){
