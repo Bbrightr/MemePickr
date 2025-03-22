@@ -56,7 +56,7 @@ function getSingleCatObject(){
     
 }
 
-function renderCat(){s
+function renderCat(){
     const catObject = getSingleCatObject()
     memeModalInner.innerHTML = `
                     <img 
@@ -69,6 +69,8 @@ function renderCat(){s
     memeModal.style.display = "flex"
     
 }
+
+
  
 function getEmotionsArray(cats){
     const emotionsArray = []    
@@ -105,5 +107,10 @@ function renderEmotionsRadios(cats){
 renderEmotionsRadios(catsData)
 
 
+// document.addEventListener('click', function(){
+//     renderCat()
+//     // renderEmotionsRadios(catsData)
+//     memeModal.style.display = "none"
 
+// })
 
